@@ -1,0 +1,28 @@
+Ttweet protocol v2.0
+
+Author: Benjamin Yarmowich and Vivian Thiebaut
+Date: April 12, 2019
+
+Ttweet uses a standard TCP connection.
+A Ttweet server binds to a port number and remains actively waiting for connections. 
+Clients must provide a request for connection. Upon an attempt to connect the server 
+creates a new thread to handle requests from that client while the current thread remains 
+waiting for other requests from different clients. When the client estabilishes a connection
+with the server it creates a new thread to listen to tweets that are redirected by the server
+while the current thread waits for requests from system standard input.
+
+A connection is now established. 
+The server will keep a dictionary (users) with the connectios of every user with the server
+(so that all the threads can send messages to all clients), and a dicionary (hashtags) where the keys 
+are hashtags and the value is a list of all the users subscribed to that hashtag.
+The client will be able to send the following requests to the server:
+1. tweet: the client sends a message to the server, and the server directs that message to all the
+users subscribed to the hashtags in the tweet.
+2. timeline: the client prints all the tweets directed to it, that are all stored in an list. They don't
+need to make any requests to the server.
+3. subscribe: the server will add the user to the list of users that are subscribed to that hashtag
+(using the dictionary hashtags)
+4. unsubscribed: the server will remove the user from the list of people subscribed to that hashtag in 
+the hashtags dictionary
+5. exit: user is removed from users dictionary and from all the lists of subscriptions from all the 
+hashtags it was subscribed to. Connection is closed.
