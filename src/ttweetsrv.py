@@ -3,7 +3,7 @@ import sys
 import threading
 import re
 
-# {user:conn}
+# {username : conn}
 users = {};
 hashtags = {};
 
@@ -28,53 +28,15 @@ def run_server(conn,address,user):
             # client send tweet to server
             if (command == "tweet"):
                 # Get the tweet in the quotations
-                tweet = data.split("\"")[1]
+                tweet = data.split("\"")[1]                
+                for target in users[]:
+                    if target == user:
+                        continue
+                    else:
+                        users[target].sendall(tweet.encode("utf-8"))
+                conn.sendall(b'ack')
 
-                for i in range(len(tags)):
-                    tags[i] = '#'+tags[i]
-
-                print (tags)
-                tweet = str(user) + ": " + str(tweet) + ' ' + ''.join(tags)
-                print (tweet)
-                usersTweetSentTo = []
-                for tag in tags:
-                    if (tag in hashtags.keys()):
-                        for u in hashtags[tag]:
-                            if (u not in usersTweetSentTo):
-                                usersTweetSentTo.append(u)
-                                users[u].sendall( bytes( str ( ( tweet ) ), 'utf-8' ) )
-                if "#ALL" in hashtags.keys():
-                    for u in hashtags["#ALL"]:
-                        if u not in usersTweetSentTo:
-                            usersTweetSentTo.append(u)
-                            users[u].sendall( bytes( str ( ( tweet ) ), 'utf-8' ) )
-
-                print(tags)
-                conn.sendall( b'ack')
-            elif ("unsubscribe" in data.split()[0]):
-                tag = '#' + data.split()[1][1:-1]
-                print ("unsubscribe" , tag)
-                if (tag in hashtags.keys() and user in hashtags[tag]):
-                    hashtags[tag].remove(user)
-                    connection.sendall( b'ack')
-                else:
-                    connection.sendall( b'nack')
-                print (hashtags)
-            elif ("subscribe" in data.split()[0] and len(data.split()[1][1:-1]) > 0):
-                tag = '#'+ data.split()[1][1:-1]
-                print ("subscribe" , tag)
-                if (tag in hashtags.keys() and user in hashtags[tag]):
-                    connection.sendall( b'nack')
-                elif (tag in hashtags.keys()):
-                    hashtags[tag].append(user)
-                    connection.sendall( b'ack')
-                else:
-                    hashtags[tag] = []
-                    hashtags[tag].append(user)
-                    connection.sendall( b'ack')
-                print (hashtags)
-
-            elif ("exit" in data.split()[0]):
+            elif (command == "exit"):
                 #TODO: Remove user and connection from all subscriptions
                 for tag in hashtags.keys():
                     if user in hashtags[tag]:
