@@ -6,23 +6,23 @@ import re
 
 mailbox = []
 
-def commandUsage():
-    print ('\nCommand Usage Error:')
-    print ('timeline')
-    print ('subscribe #<hastag>')
-    print ('unsubscribe #<hastag>')
-    print ('tweet "<message <= 150 characters>" [#<hastag>]>')
+def commandError():
+    print ("\nPlease input a valid command:")
+    print ('tweet "<150 char max tweet>"')
+    print ("timeline")
     print ('exit\n')
 
 """
-listen(s) is used to listen the tweet renewed from the server
+listen(s) is used to listen the message from the server
 """
 def listen(s):
     while True:
         try:
             data = s.recv(1024).decode("utf-8")
-            if (data != "ack"):
+            if (str(data) != "ack"):
                 mailbox.append(data)
+            if (str(data) == "ack"):
+                print("success")
         except socket.error:
             break
     print("Bye bye")
@@ -58,6 +58,7 @@ def main(argv):
     # port check
     if serverPort < 1 or serverPort > 65535:
         print("port number out of range [0, 65535]")
+        sys.exit(1)
 
     # create socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -69,17 +70,20 @@ def main(argv):
             print("socket error")
             sys.exit(1)
         # username check
+        data = repr(data)
         if (data == "b'Username has already been taken'"):
-            print("username has already been taken")
+            print("user already login, shutdown client")
             sys.exit(1)
         # if the username is not taken, continue the service
         else:
-            print("You have sucessfully connected to the server")
+            print("username legal, connection established")
             thread = threading.Thread(target = listen, args = (s,)) #args should be a tuple(an iterable)
             thread.start()
             while (True):
                 message = input()
                 command = message.split()[0]
+                if (command not in ["tweet", "timeline", "exit"]):
+                    commandError()
                 # tweet "<150 char max tweet>"
                 if (command == "tweet"):
                     if (len(message.split('"')[1]) < 1):
@@ -88,7 +92,7 @@ def main(argv):
                         print("Message can not be longer than 150 charecters")
                     else:
                         s.send(bytes(message, encoding = "utf-8"))
-                        print(bytes(message, encoding = "utf-8"))
+
 
                 # timeline
                 # <current_client_username> from <sender_username> "<tweet_message>"
@@ -97,8 +101,8 @@ def main(argv):
                         print ("No new message")
                     else:
                         for tweet in mailbox:
-                            print(username, "from", tweet, )
-                            mailbox.clear()
+                            print(username, "from", tweet)
+                        mailbox.clear()
 
                 # exit
                 elif (command == "exit"):

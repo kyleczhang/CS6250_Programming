@@ -25,7 +25,7 @@ def run_server(conn,address,user):
                 for target in users:
                     if target == user:
                         continue
-                    else:
+                    else:   
                         users[target].sendall(bytes(tweet, encoding = "utf-8"))
                 rep = "ack"
                 conn.send(bytes(rep, encoding = "utf-8"))
