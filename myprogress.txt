@@ -1,2 +1,0 @@
-next time read from:
-Let’s look at what our accept_wrapper() function does:

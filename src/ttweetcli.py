@@ -3,6 +3,8 @@ import sys
 import getopt
 import threading
 import re
+import time
+
 
 mailbox = []
 
@@ -68,7 +70,8 @@ def main(argv):
             data = s.recv(1024)
         except socket.error:
             print("socket error")
-            return        # username check
+            return
+        # username check
         data = repr(data)
         if (data == "b'Username has already been taken'"):
             print("user already login, shutdown client")
@@ -88,7 +91,7 @@ def main(argv):
                     if (len(message.split('"')[1]) < 1):
                         print("message can not be empty")
                     elif (len(message.split('"')[1]) > 150):
-                        print("Message can not be longer than 150 charecters")
+                        print("Message can not be longer than 150 characters")
                     else:
                         s.send(bytes(message, encoding = "utf-8"))
 

@@ -4,14 +4,12 @@ import threading
 
 # {username : conn}
 users = {};
-hashtags = {};
 
 def run_server(conn,address,user):
     try:
         while conn and user in users.keys():
             data = conn.recv(1024)
             data = repr(data)
-            print(data)
             if (data == "b''"):
                 raise ConnectionError('Client command error')
             command = data.split()[0]
@@ -19,9 +17,7 @@ def run_server(conn,address,user):
             if ("tweet" in command):
                 # Get the tweet in the quotations
                 tweet = data.split("\"")[1]
-                print(tweet)
                 tweet = user + ": \"" + tweet + "\"" 
-                print(tweet)
                 for target in users:
                     if target == user:
                         continue
