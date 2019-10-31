@@ -1,0 +1,12 @@
+test_no_server
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 cxworks
+socket error
+You have sucessfully connected to the server
+Traceback (most recent call last):
+  File "ttweetcli.py", line 108, in <module>
+Bye bye
+    if __name__ == "__main__":
+  File "ttweetcli.py", line 80, in main
+    while (True):
+KeyboardInterrupt

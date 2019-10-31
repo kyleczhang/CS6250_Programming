@@ -1,0 +1,141 @@
+Server started at port 13000
+server get : {op='login', username='network', msg='null'}
+server get : {op='tweet', username='network', msg='message'}
+server get : {op='tweet', username='network', msg='message message'}
+server get : {op='timeline', username='network', msg='null'}
+server get : {op='exit', username='network', msg='null'}
+server get : {op='login', username='network0', msg='null'}
+server get : {op='login', username='network1', msg='null'}
+server get : {op='login', username='network2', msg='null'}
+server get : {op='login', username='network3', msg='null'}
+server get : {op='login', username='network4', msg='null'}
+server get : {op='tweet', username='network0', msg='message'}
+server get : {op='tweet', username='network1', msg='message'}
+server get : {op='tweet', username='network2', msg='message'}
+server get : {op='tweet', username='network3', msg='message'}
+server get : {op='tweet', username='network4', msg='message'}
+server get : {op='tweet', username='network0', msg='message message'}
+server get : {op='tweet', username='network1', msg='message message'}
+server get : {op='tweet', username='network2', msg='message message'}
+server get : {op='tweet', username='network3', msg='message message'}
+server get : {op='tweet', username='network4', msg='message message'}
+server get : {op='tweet', username='network0', msg=' '}
+server get : {op='tweet', username='network1', msg=' '}
+server get : {op='tweet', username='network2', msg=' '}
+server get : {op='tweet', username='network3', msg=' '}
+server get : {op='tweet', username='network4', msg=' '}
+server get : {op='tweet', username='network0', msg='cs6250'}
+server get : {op='tweet', username='network1', msg='cs6250'}
+server get : {op='tweet', username='network2', msg='cs6250'}
+server get : {op='tweet', username='network3', msg='cs6250'}
+server get : {op='tweet', username='network4', msg='cs6250'}
+server get : {op='tweet', username='network0', msg='fsadfsdfd'}
+server get : {op='tweet', username='network1', msg='fsadfsdfd'}
+server get : {op='tweet', username='network2', msg='fsadfsdfd'}
+server get : {op='tweet', username='network3', msg='fsadfsdfd'}
+server get : {op='tweet', username='network4', msg='fsadfsdfd'}
+server get : {op='tweet', username='network0', msg='empty message'}
+server get : {op='tweet', username='network1', msg='empty message'}
+server get : {op='tweet', username='network2', msg='empty message'}
+server get : {op='tweet', username='network3', msg='empty message'}
+server get : {op='tweet', username='network4', msg='empty message'}
+server get : {op='tweet', username='network0', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network1', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network2', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network3', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network4', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network0', msg='\0'}
+server get : {op='tweet', username='network1', msg='\0'}
+server get : {op='tweet', username='network2', msg='\0'}
+server get : {op='tweet', username='network3', msg='\0'}
+server get : {op='tweet', username='network4', msg='\0'}
+server get : {op='tweet', username='network0', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network1', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network2', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network3', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network4', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network0', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network1', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network2', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network3', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network4', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network0', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network1', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network2', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network3', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network4', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network0', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network1', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network2', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network3', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network4', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network0', msg=' '}
+server get : {op='tweet', username='network1', msg=' '}
+server get : {op='tweet', username='network2', msg=' '}
+server get : {op='tweet', username='network3', msg=' '}
+server get : {op='tweet', username='network4', msg=' '}
+server get : {op='tweet', username='network0', msg='cs6250'}
+server get : {op='tweet', username='network1', msg='cs6250'}
+server get : {op='tweet', username='network2', msg='cs6250'}
+server get : {op='tweet', username='network3', msg='cs6250'}
+server get : {op='tweet', username='network4', msg='cs6250'}
+server get : {op='tweet', username='network0', msg='fsadfsdfd'}
+server get : {op='tweet', username='network1', msg='fsadfsdfd'}
+server get : {op='tweet', username='network2', msg='fsadfsdfd'}
+server get : {op='tweet', username='network3', msg='fsadfsdfd'}
+server get : {op='tweet', username='network4', msg='fsadfsdfd'}
+server get : {op='tweet', username='network0', msg='empty message'}
+server get : {op='tweet', username='network1', msg='empty message'}
+server get : {op='tweet', username='network2', msg='empty message'}
+server get : {op='tweet', username='network3', msg='empty message'}
+server get : {op='tweet', username='network4', msg='empty message'}
+server get : {op='tweet', username='network0', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network1', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network2', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network3', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network4', msg='~!@#$%^&*()_+-=[]{};:.,<>/?|\'}
+server get : {op='tweet', username='network0', msg='\0'}
+server get : {op='tweet', username='network1', msg='\0'}
+server get : {op='tweet', username='network2', msg='\0'}
+server get : {op='tweet', username='network3', msg='\0'}
+server get : {op='tweet', username='network4', msg='\0'}
+server get : {op='tweet', username='network0', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network1', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network2', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network3', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network4', msg='149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network0', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network1', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network2', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network3', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network4', msg='                                                                                                                                                     '}
+server get : {op='tweet', username='network0', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network1', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network2', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network3', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network4', msg='150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+server get : {op='tweet', username='network0', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network1', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network2', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network3', msg='                                                                                                                                                      '}
+server get : {op='tweet', username='network4', msg='                                                                                                                                                      '}
+server get : {op='timeline', username='network0', msg='null'}
+server get : {op='timeline', username='network1', msg='null'}
+server get : {op='timeline', username='network2', msg='null'}
+server get : {op='timeline', username='network3', msg='null'}
+server get : {op='timeline', username='network4', msg='null'}
+server get : {op='timeline', username='network0', msg='null'}
+server get : {op='timeline', username='network1', msg='null'}
+server get : {op='timeline', username='network2', msg='null'}
+server get : {op='timeline', username='network3', msg='null'}
+server get : {op='timeline', username='network4', msg='null'}
+server get : {op='exit', username='network0', msg='null'}
+server get : {op='exit', username='network1', msg='null'}
+server get : {op='exit', username='network2', msg='null'}
+server get : {op='exit', username='network3', msg='null'}
+server get : {op='exit', username='network4', msg='null'}
+server get : {op='login', username='gtnetwork', msg='null'}
+server get : {op='login', username='gtnetwork', msg='null'}
+server get : {op='exit', username='gtnetwork', msg='null'}
+server get : {op='login', username='gtnetwork', msg='null'}
+server get : {op='exit', username='gtnetwork', msg='null'}

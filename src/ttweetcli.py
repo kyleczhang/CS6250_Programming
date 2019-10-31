@@ -2,138 +2,9 @@ import socket
 import sys
 import getopt
 import threading
+import re
 
-unread_subscribed_tweets = []
-
-def listening_for_tweets(s):
-    while True:
-        data = s.recv(1024).decode("utf-8")
-        if (not data == "ack" and not data == "nack"):
-            unread_subscribed_tweets.append(data)
-
-def main(argv):
-    subscriptions = []
-    host = ''               # The server's hostname or IP address
-    port = ''               # The port used by the server
-    username = ''
-    hashtag = ''            # hashtag string
-    valid_commands = (("tweet",3),("subscribe",2),("unsubscribe",2),("timeline",1),("exit",1))
-    '''if( len( sys.argv ) == 1):
-        host = '127.0.0.1'
-        port = 13069
-        username = 'Dril' '''
-    if( len( sys.argv ) == 4 ):
-        host = sys.argv[1]
-        port = sys.argv[2]
-        username = sys.argv[3]
-    else:
-        usage()
-
-
-    #not working for & but I guess thats life
-    if username.isalnum()==False :
-        print( 'Username must only contain letters and numbers' )
-        sys.exit(2)
-
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        try:
-            s.connect( ( host, int( port ) ) )
-            s.sendall( bytes( str ( ( username ) ), 'utf-8' ) )
-            data = s.recv(1024)
-        except socket.error as msg:
-            socketError( msg )
-        print( 'Received', repr( data ) )
-        if (repr( data ) == "b'error: username already taken'"):
-            print("username already taken")
-            sys.exit(2)
-        else:
-            print("username valid, connection estabilished")
-            thread = threading.Thread(target=listening_for_tweets, args=(s,))
-            thread.daemon = True
-            thread.start()
-            while(1):
-                message = input()
-                command = message
-                if (command != ''):
-                    command_length = len(command.split())
-                    if (command.split()[0] == "tweet"):
-                        command_length = len(command.split('"'))
-                    if ((command.split()[0], command_length) in valid_commands):
-                        if (command.split()[0] == "timeline"):
-                            if (len(unread_subscribed_tweets) == 0):
-                                print ("\n No new tweets")
-                            else:
-                                print("\nTimeline: ")
-                                for tweet in unread_subscribed_tweets:
-                                    print(username, "receives message from", tweet)
-                                print ('')
-                                unread_subscribed_tweets.clear()
-                        elif (command.split()[0] == "subscribe"):
-                            if ((command.split()[1])[0] != '#' or len(command.split()[1].split('#')) != 2):
-                                commandUsage()
-                            elif len(command.split()[1]) < 2:
-                                hashtagCannotBeOfSizeOne()
-                            elif len(command.split()[1]) > 25:
-                                hashtagMaxSize()
-                            elif len(subscriptions) >= 3:
-                                maxSubs()
-                            elif command.split()[1] not in subscriptions:
-                                subscriptions.append(command.split()[1])
-                                s.sendall( bytes( str ( ( command ) ), 'utf-8' ) )
-                            else:
-                                print("You are already subscribed to this tag")
-                            print("Your subscriptions: ",subscriptions)
-                        elif command.split()[0] == "unsubscribe":
-                            if ((command.split()[1])[0] != '#' or len(command.split()[1].split('#')) != 2):
-                                commandUsage()
-                            elif command.split()[1] in subscriptions:
-                                subscriptions.remove(command.split()[1])
-                                s.sendall( bytes( str ( ( command ) ), 'utf-8' ) )
-                            else:
-                                print("You are not subscribed")
-                        elif (command.split()[0] == "tweet"):
-                            #only 8 hashtags
-                            #max size of 25 per hashtag
-                            #only alphanumeric characters
-                            tags = command.split('"')[2].split('#')[1:]
-                            #print("Tags:",tags)
-
-
-                            flag = 0
-                            flag_2 = 0
-                            if (len(tags) == 0):
-                                flag = 1
-                            for i in range(len(tags)):
-                                if len(tags[i]) == 0:
-                                    flag = 1
-                                if len(tags[i])>24:
-                                    flag_2 = 1
-
-                            if ((command.split('"')[2])[1] != '#'):
-                                commandUsage()
-                            elif (len(command.split('"')[1]) < 1):
-                                messageCannotBeEmpty()
-                            elif (len(command.split('"')[1]) > 150):
-                                messageTooLong(len(command.split('"')[1]))
-                            elif flag == 1:
-                                hashtagCannotBeOfSizeOne()
-                            elif len(tags) > 8:
-                                tooManyTags()
-                            elif flag_2 == 1:
-                                hashtagMaxSize()
-                            elif "ALL" in tags:
-                                ALLnotAllowedWhenTweeting()
-                            else:
-                                s.sendall( bytes( str ( ( command ) ), 'utf-8' ) )
-
-                        else:
-                            s.sendall( bytes( str ( ( command ) ), 'utf-8' ) )
-                            if (command.split('""')[0]  == "exit"):
-                                sys.exit(0)
-                    else:
-                        commandUsage()
-
-
+mailbox = []
 
 def commandUsage():
     print ('\nCommand Usage Error:')
@@ -143,39 +14,96 @@ def commandUsage():
     print ('tweet "<message <= 150 characters>" [#<hastag>]>')
     print ('exit\n')
 
+"""
+listen(s) is used to listen the tweet renewed from the server
+"""
+def listen(s):
+    while True:
+        try:
+            data = s.recv(1024).decode("utf-8")
+            if (data != "ack"):
+                mailbox.append(data)
+        except socket.error:
+            break
+    print("Bye bye")
 
-def ALLnotAllowedWhenTweeting():
-    print("#ALL is not allowed when tweeting")
 
-def tooManyTags():
-    print("Only a maximum of 8 tags allowed in a tweet")
-def usage():
-    print( '\nUsage Error:')
-    print( 'Usage:$ python ttweetcli.py <ServerIP> <ServerPort> <Username>\n' )
-    sys.exit(2)
+def main(argv):
 
-def messageTooLong(messageLength):
-    print( '\nUsage Error')
-    print( 'Messages cannot be longer than 150 charecters, your message is', messageLength , ' characeters long\n' )
+    # declare data = ""
+    data = ""
+    # argument error
+    if (len(sys.argv) != 4):
+        print("Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>\n")
+        sys.exit(1)
+    else:
+        serverIP = sys.argv[1]
+        serverPort = int(sys.argv[2])
+        username = sys.argv[3]
+    # username check
+    if not re.match("^[A-Za-z0-9]*$", username):
+        print("username illegal, username should be made of alphabet characters and numbers")
+        sys.exit(1)
+    # IP address check
+    serverIP_check = serverIP.split(".")
+    if(len(serverIP_check) == 4):
+        for x in serverIP_check:
+            if int(x) < 0 or int(x) > 255:
+                print("please input a correct IP address: [0,255].[0,255].[0,255].[0,255]")
+                sys.exit(1)
+    else:
+        print("IPv4 IP address should contain 4 numbers")
+        sys.exit(1)
 
-def messageCannotBeEmpty():
-    print( '\nUsage Error')
-    print( 'Messages to be uploaded must not be empty\n')
+    # port check
+    if serverPort < 1 or serverPort > 65535:
+        print("port number out of range [0, 65535]")
 
-def hashtagCannotBeOfSizeOne():
-    print( '\nUsage Error')
-    print( "Hashtag can't be empty\n")
+    # create socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        try:
+            s.connect((serverIP, serverPort))
+            s.sendall(bytes(username, encoding = "utf-8"))
+            data = s.recv(1024)
+        except socket.error:
+            print("socket error")
+            sys.exit(1)
+        # username check
+        if (data == "b'Username has already been taken'"):
+            print("username has already been taken")
+            sys.exit(1)
+        # if the username is not taken, continue the service
+        else:
+            print("You have sucessfully connected to the server")
+            thread = threading.Thread(target = listen, args = (s,)) #args should be a tuple(an iterable)
+            thread.start()
+            while (True):
+                message = input()
+                command = message.split()[0]
+                # tweet "<150 char max tweet>"
+                if (command == "tweet"):
+                    if (len(message.split('"')[1]) < 1):
+                        print("message can not be empty")
+                    elif (len(message.split('"')[1]) > 150):
+                        print("Message can not be longer than 150 charecters")
+                    else:
+                        s.send(bytes(message, encoding = "utf-8"))
+                        print(bytes(message, encoding = "utf-8"))
 
-def hashtagMaxSize():
-    print( '\nUsage Error')
-    print( "Hashtag can't be longer than 24 characters\n")
+                # timeline
+                # <current_client_username> from <sender_username> "<tweet_message>"
+                elif command == "timeline":
+                    if (len(mailbox) == 0):
+                        print ("No new message")
+                    else:
+                        for tweet in mailbox:
+                            print(username, "from", tweet, )
+                            mailbox.clear()
 
-def socketError(msg):
-    print( 'Socket Error' )
-    print( msg )
-    sys.exit(3)
+                # exit
+                elif (command == "exit"):
+                    s.sendall(bytes(message, encoding = "utf-8"))
+                    sys.exit(0)
 
-def maxSubs():
-    print("Too many subscriptions.")
-
-main( sys.argv )
+if __name__ == "__main__":
+    main( sys.argv )

@@ -1,0 +1,20 @@
+test_login_start
+
+run command: java -jar tweetcli.jar 127.0.0.1 13000 gtnetwork
+username legal, connection established
+
+run command on same user: java -jar tweetcli.jar 127.0.0.1 13000 gtnetwork
+this step should be failed
+Login failed, User already login
+
+user gtnetwork stdin command: exit
+Bye Bye
+
+run command on same user: java -jar tweetcli.jar 127.0.0.1 13000 gtnetwork
+this step should succeed
+username legal, connection established
+
+user gtnetwork stdin command: exit
+Bye Bye
+
+test_login_end

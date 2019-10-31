@@ -1,60 +1,49 @@
-import socket
 import sys
+import socket
 import threading
-import re
 
 # {username : conn}
 users = {};
 hashtags = {};
-
-
-def dataError(code):
-    if( code == 1 ):
-        print( "data recieved was null" )
-    sys.exit(1)
-
-def usageError():
-    print( 'Usage: $ python3 ttweetsrv.py <port_number>)' )
-    sys.exit(1)
 
 def run_server(conn,address,user):
     try:
         while conn and user in users.keys():
             data = conn.recv(1024)
             data = repr(data)
+            print(data)
             if (data == "b''"):
                 raise ConnectionError('Client command error')
             command = data.split()[0]
             # client send tweet to server
-            if (command == "tweet"):
+            if ("tweet" in command):
                 # Get the tweet in the quotations
-                tweet = data.split("\"")[1]                
-                for target in users[]:
+                tweet = data.split("\"")[1]
+                print(tweet)
+                tweet = user + ": \"" + tweet + "\"" 
+                print(tweet)
+                for target in users:
                     if target == user:
                         continue
                     else:
-                        users[target].sendall(tweet.encode("utf-8"))
-                conn.sendall(b'ack')
-
-            elif (command == "exit"):
-                #TODO: Remove user and connection from all subscriptions
-                for tag in hashtags.keys():
-                    if user in hashtags[tag]:
-                        hashtags[tag].remove(user)
+                        users[target].sendall(bytes(tweet, encoding = "utf-8"))
+                rep = "ack"
+                conn.send(bytes(rep, encoding = "utf-8"))
+            # client send exit request
+            elif ("exit" in command):
+                # delete the user's info and close the client gracefully
+                rep = "exit"
+                conn.send(bytes(rep, encoding = "utf-8"))
+                conn.close()
                 users.pop(user)
-                connection.close()
-                print("Connection closed with", user)
-                #print (hashtags)
-                #print (users)
+                print("Connection with", user, "has been closed")
                 break
-    except ConnectionError as error:
-        #TODO: Remove user and connection from all subscriptions
-        for tag in hashtags.keys():
-            if user in hashtags[tag]:
-                hashtags[tag].remove(user)
-        print( user , "disconected" )
-        connection.close()
+    except ConnectionError:
+        # remove the user from user list and close the client gracefully
+        conn.close()
         users.pop(user)
+        print("Connection with", user, "has lost because of connection error")
+        
 
 
 def main(argv):
@@ -66,13 +55,15 @@ def main(argv):
     if(len(sys.argv) == 2):
         port = sys.argv[1]
     elif(len(sys.argv) != 2):
-        usageError()
+        print( 'Usage: $ python3 ttweetsrv.py <port_number>)' )
+        sys.exit(1)
+
     print( 'Server is now listening to', host, ':', port )
     # create socket object that supports the context manager type
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((host,int(port)))
         try:
-            while True:
+            while (True):
                 # set backlog as default
                 s.listen()
                 # accept and save the client object(conn) and address(addr)
@@ -82,11 +73,11 @@ def main(argv):
                 data = conn.recv(1024)
                 user = data[0:len(data)].decode("utf-8")
                 if (user in users.keys()):
-                    conn.sendall(b'Username has already been taken')
+                    conn.send(b'Username has already been taken')
                     conn.close()
                 else:
                     users[user] = conn
-                    conn.sendall( b'You have sucessfully connected to the server')
+                    conn.send(b'longin sucessfully')
                     print ("Connected by", user)
                     thread = threading.Thread(target=run_server, args=(conn,addr,user))
                     #thread.daemon = True
