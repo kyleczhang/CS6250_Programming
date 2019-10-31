@@ -48,7 +48,8 @@ def run_server(conn,address,user):
 
 def main(argv):
     # get local IP address, the server will listen to local machine
-    host = socket.gethostbyname(socket.gethostname())
+    host = "127.0.0.1"
+    #host = socket.gethostbyname(socket.gethostname())
     # the server will listen to port 8080 by default, it can be replaced by argv[1]
     port = 8080
     # specify port number and check error

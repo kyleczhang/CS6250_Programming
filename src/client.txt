@@ -2,11 +2,944 @@ test_no_server
 
 run command: python3 -u ttweetcli.py 127.0.0.1 13000 cxworks
 socket error
-You have sucessfully connected to the server
-Traceback (most recent call last):
-  File "ttweetcli.py", line 108, in <module>
+test_no_server _ end
+
+run command on server: python3 -u ttweetsrv.py 13000
+test_illegal_input
+
+run command: python3 -u ttweetcli.py 
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+
+run command: python3 -u ttweetcli.py 127.0.0.1
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+
+run command: python3 -u ttweetcli.py 324.1.1.4
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+
+run command: python3 -u ttweetcli.py 127.0.0.1 -3
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+
+run command: python3 -u ttweetcli.py 127.0.0.1 80 
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 
+Usage: $ python3 ttweetcli.py <ServerIP> <ServerPort> <Username>
+
+test_illegal_input _ end
+
+test_single_client
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network
+username legal, connection established
+
+user network stdin command: tweet ""
+message can not be empty
+
+user network stdin command: tweet "message"
+success
+
+user network stdin command: tweet "message message"
+success
+
+user network stdin command: timeline
+No new message
+
+user network stdin command: exit
 Bye bye
-    if __name__ == "__main__":
-  File "ttweetcli.py", line 80, in main
-    while (True):
-KeyboardInterrupt
+test_single_client _ end
+
+test_multi_client
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network0
+username legal, connection established
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network1
+username legal, connection established
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network2
+username legal, connection established
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network3
+username legal, connection established
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 network4
+username legal, connection established
+
+user network0 stdin command: tweet ""
+message can not be empty
+
+user network1 stdin command: tweet ""
+message can not be empty
+
+user network2 stdin command: tweet ""
+message can not be empty
+
+user network3 stdin command: tweet ""
+message can not be empty
+
+user network4 stdin command: tweet ""
+message can not be empty
+
+user network0 stdin command: tweet "message"
+success
+
+user network1 stdin command: tweet "message"
+success
+
+user network2 stdin command: tweet "message"
+success
+
+user network3 stdin command: tweet "message"
+success
+
+user network4 stdin command: tweet "message"
+success
+
+user network0 stdin command: tweet "message message"
+success
+
+user network1 stdin command: tweet "message message"
+success
+
+user network2 stdin command: tweet "message message"
+success
+
+user network3 stdin command: tweet "message message"
+success
+
+user network4 stdin command: tweet "message message"
+success
+
+user network0 stdin command: tweet " "
+success
+
+user network1 stdin command: tweet " "
+success
+
+user network2 stdin command: tweet " "
+success
+
+user network3 stdin command: tweet " "
+success
+
+user network4 stdin command: tweet " "
+success
+
+user network0 stdin command: tweet "cs6250"
+success
+
+user network1 stdin command: tweet "cs6250"
+success
+
+user network2 stdin command: tweet "cs6250"
+success
+
+user network3 stdin command: tweet "cs6250"
+success
+
+user network4 stdin command: tweet "cs6250"
+success
+
+user network0 stdin command: tweet "fsadfsdfd"
+success
+
+user network1 stdin command: tweet "fsadfsdfd"
+success
+
+user network2 stdin command: tweet "fsadfsdfd"
+success
+
+user network3 stdin command: tweet "fsadfsdfd"
+success
+
+user network4 stdin command: tweet "fsadfsdfd"
+success
+
+user network0 stdin command: tweet "empty message"
+success
+
+user network1 stdin command: tweet "empty message"
+success
+
+user network2 stdin command: tweet "empty message"
+success
+
+user network3 stdin command: tweet "empty message"
+success
+
+user network4 stdin command: tweet "empty message"
+success
+
+user network0 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network1 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network2 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network3 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network4 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network0 stdin command: tweet "\0"
+success
+
+user network1 stdin command: tweet "\0"
+success
+
+user network2 stdin command: tweet "\0"
+success
+
+user network3 stdin command: tweet "\0"
+success
+
+user network4 stdin command: tweet "\0"
+success
+
+user network0 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network1 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network2 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network3 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network4 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network0 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network1 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network2 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network3 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network4 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network0 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network1 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network2 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network3 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network4 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network0 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network1 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network2 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network3 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network4 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network0 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network1 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network2 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network3 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network4 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network0 stdin command: tweet " "
+success
+
+user network1 stdin command: tweet " "
+success
+
+user network2 stdin command: tweet " "
+success
+
+user network3 stdin command: tweet " "
+success
+
+user network4 stdin command: tweet " "
+success
+
+user network0 stdin command: tweet "cs6250"
+success
+
+user network1 stdin command: tweet "cs6250"
+success
+
+user network2 stdin command: tweet "cs6250"
+success
+
+user network3 stdin command: tweet "cs6250"
+success
+
+user network4 stdin command: tweet "cs6250"
+success
+
+user network0 stdin command: tweet "fsadfsdfd"
+success
+
+user network1 stdin command: tweet "fsadfsdfd"
+success
+
+user network2 stdin command: tweet "fsadfsdfd"
+success
+
+user network3 stdin command: tweet "fsadfsdfd"
+success
+
+user network4 stdin command: tweet "fsadfsdfd"
+success
+
+user network0 stdin command: tweet "empty message"
+success
+
+user network1 stdin command: tweet "empty message"
+success
+
+user network2 stdin command: tweet "empty message"
+success
+
+user network3 stdin command: tweet "empty message"
+success
+
+user network4 stdin command: tweet "empty message"
+success
+
+user network0 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network1 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network2 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network3 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network4 stdin command: tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+success
+
+user network0 stdin command: tweet "\0"
+success
+
+user network1 stdin command: tweet "\0"
+success
+
+user network2 stdin command: tweet "\0"
+success
+
+user network3 stdin command: tweet "\0"
+success
+
+user network4 stdin command: tweet "\0"
+success
+
+user network0 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network1 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network2 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network3 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network4 stdin command: tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network0 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network1 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network2 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network3 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network4 stdin command: tweet "                                                                                                                                                     "
+success
+
+user network0 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network1 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network2 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network3 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network4 stdin command: tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+success
+
+user network0 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network1 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network2 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network3 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network4 stdin command: tweet "                                                                                                                                                      "
+success
+
+user network0 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network1 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network2 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network3 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network4 stdin command: tweet "151aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Message can not be longer than 150 charecters
+
+user network0 stdin command: timeline
+network0 from network1: "message"
+network0 from network2: "message"
+network0 from network3: "message"
+network0 from network4: "message"
+network0 from network1: "message message"
+network0 from network2: "message message"
+network0 from network3: "message message"
+network0 from network4: "message message"
+network0 from network1: " "
+network0 from network2: " "
+network0 from network3: " "
+network0 from network4: " "
+network0 from network1: "cs6250"
+network0 from network2: "cs6250"
+network0 from network3: "cs6250"
+network0 from network4: "cs6250"
+network0 from network1: "fsadfsdfd"
+network0 from network2: "fsadfsdfd"
+network0 from network3: "fsadfsdfd"
+network0 from network4: "fsadfsdfd"
+network0 from network1: "empty message"
+network0 from network2: "empty message"
+network0 from network3: "empty message"
+network0 from network4: "empty message"
+network0 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network1: "\\0"
+network0 from network2: "\\0"
+network0 from network3: "\\0"
+network0 from network4: "\\0"
+network0 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network1: "                                                                                                                                                     "
+network0 from network2: "                                                                                                                                                     "
+network0 from network3: "                                                                                                                                                     "
+network0 from network4: "                                                                                                                                                     "
+network0 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network1: "                                                                                                                                                      "
+network0 from network2: "                                                                                                                                                      "
+network0 from network3: "                                                                                                                                                      "
+network0 from network4: "                                                                                                                                                      "
+network0 from network1: " "
+network0 from network2: " "
+network0 from network3: " "
+network0 from network4: " "
+network0 from network1: "cs6250"
+network0 from network2: "cs6250"
+network0 from network3: "cs6250"
+network0 from network4: "cs6250"
+network0 from network1: "fsadfsdfd"
+network0 from network2: "fsadfsdfd"
+network0 from network3: "fsadfsdfd"
+network0 from network4: "fsadfsdfd"
+network0 from network1: "empty message"
+network0 from network2: "empty message"
+network0 from network3: "empty message"
+network0 from network4: "empty message"
+network0 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network0 from network1: "\\0"
+network0 from network2: "\\0"
+network0 from network3: "\\0"
+network0 from network4: "\\0"
+network0 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network1: "                                                                                                                                                     "
+network0 from network2: "                                                                                                                                                     "
+network0 from network3: "                                                                                                                                                     "
+network0 from network4: "                                                                                                                                                     "
+network0 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network0 from network1: "                                                                                                                                                      "
+network0 from network2: "                                                                                                                                                      "
+network0 from network3: "                                                                                                                                                      "
+network0 from network4: "                                                                                                                                                      "
+
+user network1 stdin command: timeline
+network1 from network0: "message"
+network1 from network2: "message"
+network1 from network3: "message"
+network1 from network4: "message"
+network1 from network0: "message message"
+network1 from network2: "message message"
+network1 from network3: "message message"
+network1 from network4: "message message"
+network1 from network0: " "
+network1 from network2: " "
+network1 from network3: " "
+network1 from network4: " "
+network1 from network0: "cs6250"
+network1 from network2: "cs6250"
+network1 from network3: "cs6250"
+network1 from network4: "cs6250"
+network1 from network0: "fsadfsdfd"
+network1 from network2: "fsadfsdfd"
+network1 from network3: "fsadfsdfd"
+network1 from network4: "fsadfsdfd"
+network1 from network0: "empty message"
+network1 from network2: "empty message"
+network1 from network3: "empty message"
+network1 from network4: "empty message"
+network1 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network0: "\\0"
+network1 from network2: "\\0"
+network1 from network3: "\\0"
+network1 from network4: "\\0"
+network1 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network0: "                                                                                                                                                     "
+network1 from network2: "                                                                                                                                                     "
+network1 from network3: "                                                                                                                                                     "
+network1 from network4: "                                                                                                                                                     "
+network1 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network0: "                                                                                                                                                      "
+network1 from network2: "                                                                                                                                                      "
+network1 from network3: "                                                                                                                                                      "
+network1 from network4: "                                                                                                                                                      "
+network1 from network0: " "
+network1 from network2: " "
+network1 from network3: " "
+network1 from network4: " "
+network1 from network0: "cs6250"
+network1 from network2: "cs6250"
+network1 from network3: "cs6250"
+network1 from network4: "cs6250"
+network1 from network0: "fsadfsdfd"
+network1 from network2: "fsadfsdfd"
+network1 from network3: "fsadfsdfd"
+network1 from network4: "fsadfsdfd"
+network1 from network0: "empty message"
+network1 from network2: "empty message"
+network1 from network3: "empty message"
+network1 from network4: "empty message"
+network1 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network1 from network0: "\\0"
+network1 from network2: "\\0"
+network1 from network3: "\\0"
+network1 from network4: "\\0"
+network1 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network0: "                                                                                                                                                     "
+network1 from network2: "                                                                                                                                                     "
+network1 from network3: "                                                                                                                                                     "
+network1 from network4: "                                                                                                                                                     "
+network1 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network1 from network0: "                                                                                                                                                      "
+network1 from network2: "                                                                                                                                                      "
+network1 from network3: "                                                                                                                                                      "
+network1 from network4: "                                                                                                                                                      "
+
+user network2 stdin command: timeline
+network2 from network0: "message"
+network2 from network1: "message"
+network2 from network3: "message"
+network2 from network4: "message"
+network2 from network0: "message message"
+network2 from network1: "message message"
+network2 from network3: "message message"
+network2 from network4: "message message"
+network2 from network0: " "
+network2 from network1: " "
+network2 from network3: " "
+network2 from network4: " "
+network2 from network0: "cs6250"
+network2 from network1: "cs6250"
+network2 from network3: "cs6250"
+network2 from network4: "cs6250"
+network2 from network0: "fsadfsdfd"
+network2 from network1: "fsadfsdfd"
+network2 from network3: "fsadfsdfd"
+network2 from network4: "fsadfsdfd"
+network2 from network0: "empty message"
+network2 from network1: "empty message"
+network2 from network3: "empty message"
+network2 from network4: "empty message"
+network2 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network0: "\\0"
+network2 from network1: "\\0"
+network2 from network3: "\\0"
+network2 from network4: "\\0"
+network2 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network0: "                                                                                                                                                     "
+network2 from network1: "                                                                                                                                                     "
+network2 from network3: "                                                                                                                                                     "
+network2 from network4: "                                                                                                                                                     "
+network2 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network0: "                                                                                                                                                      "
+network2 from network1: "                                                                                                                                                      "
+network2 from network3: "                                                                                                                                                      "
+network2 from network4: "                                                                                                                                                      "
+network2 from network0: " "
+network2 from network1: " "
+network2 from network3: " "
+network2 from network4: " "
+network2 from network0: "cs6250"
+network2 from network1: "cs6250"
+network2 from network3: "cs6250"
+network2 from network4: "cs6250"
+network2 from network0: "fsadfsdfd"
+network2 from network1: "fsadfsdfd"
+network2 from network3: "fsadfsdfd"
+network2 from network4: "fsadfsdfd"
+network2 from network0: "empty message"
+network2 from network1: "empty message"
+network2 from network3: "empty message"
+network2 from network4: "empty message"
+network2 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network2 from network0: "\\0"
+network2 from network1: "\\0"
+network2 from network3: "\\0"
+network2 from network4: "\\0"
+network2 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network0: "                                                                                                                                                     "
+network2 from network1: "                                                                                                                                                     "
+network2 from network3: "                                                                                                                                                     "
+network2 from network4: "                                                                                                                                                     "
+network2 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network2 from network0: "                                                                                                                                                      "
+network2 from network1: "                                                                                                                                                      "
+network2 from network3: "                                                                                                                                                      "
+network2 from network4: "                                                                                                                                                      "
+
+user network3 stdin command: timeline
+network3 from network0: "message"
+network3 from network1: "message"
+network3 from network2: "message"
+network3 from network4: "message"
+network3 from network0: "message message"
+network3 from network1: "message message"
+network3 from network2: "message message"
+network3 from network4: "message message"
+network3 from network0: " "
+network3 from network1: " "
+network3 from network2: " "
+network3 from network4: " "
+network3 from network0: "cs6250"
+network3 from network1: "cs6250"
+network3 from network2: "cs6250"
+network3 from network4: "cs6250"
+network3 from network0: "fsadfsdfd"
+network3 from network1: "fsadfsdfd"
+network3 from network2: "fsadfsdfd"
+network3 from network4: "fsadfsdfd"
+network3 from network0: "empty message"
+network3 from network1: "empty message"
+network3 from network2: "empty message"
+network3 from network4: "empty message"
+network3 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network0: "\\0"
+network3 from network1: "\\0"
+network3 from network2: "\\0"
+network3 from network4: "\\0"
+network3 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network0: "                                                                                                                                                     "
+network3 from network1: "                                                                                                                                                     "
+network3 from network2: "                                                                                                                                                     "
+network3 from network4: "                                                                                                                                                     "
+network3 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network0: "                                                                                                                                                      "
+network3 from network1: "                                                                                                                                                      "
+network3 from network2: "                                                                                                                                                      "
+network3 from network4: "                                                                                                                                                      "
+network3 from network0: " "
+network3 from network1: " "
+network3 from network2: " "
+network3 from network4: " "
+network3 from network0: "cs6250"
+network3 from network1: "cs6250"
+network3 from network2: "cs6250"
+network3 from network4: "cs6250"
+network3 from network0: "fsadfsdfd"
+network3 from network1: "fsadfsdfd"
+network3 from network2: "fsadfsdfd"
+network3 from network4: "fsadfsdfd"
+network3 from network0: "empty message"
+network3 from network1: "empty message"
+network3 from network2: "empty message"
+network3 from network4: "empty message"
+network3 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network3 from network0: "\\0"
+network3 from network1: "\\0"
+network3 from network2: "\\0"
+network3 from network4: "\\0"
+network3 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network0: "                                                                                                                                                     "
+network3 from network1: "                                                                                                                                                     "
+network3 from network2: "                                                                                                                                                     "
+network3 from network4: "                                                                                                                                                     "
+network3 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network3 from network0: "                                                                                                                                                      "
+network3 from network1: "                                                                                                                                                      "
+network3 from network2: "                                                                                                                                                      "
+network3 from network4: "                                                                                                                                                      "
+
+user network4 stdin command: timeline
+network4 from network0: "message"
+network4 from network1: "message"
+network4 from network2: "message"
+network4 from network3: "message"
+network4 from network0: "message message"
+network4 from network1: "message message"
+network4 from network2: "message message"
+network4 from network3: "message message"
+network4 from network0: " "
+network4 from network1: " "
+network4 from network2: " "
+network4 from network3: " "
+network4 from network0: "cs6250"
+network4 from network1: "cs6250"
+network4 from network2: "cs6250"
+network4 from network3: "cs6250"
+network4 from network0: "fsadfsdfd"
+network4 from network1: "fsadfsdfd"
+network4 from network2: "fsadfsdfd"
+network4 from network3: "fsadfsdfd"
+network4 from network0: "empty message"
+network4 from network1: "empty message"
+network4 from network2: "empty message"
+network4 from network3: "empty message"
+network4 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network0: "\\0"
+network4 from network1: "\\0"
+network4 from network2: "\\0"
+network4 from network3: "\\0"
+network4 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network0: "                                                                                                                                                     "
+network4 from network1: "                                                                                                                                                     "
+network4 from network2: "                                                                                                                                                     "
+network4 from network3: "                                                                                                                                                     "
+network4 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network0: "                                                                                                                                                      "
+network4 from network1: "                                                                                                                                                      "
+network4 from network2: "                                                                                                                                                      "
+network4 from network3: "                                                                                                                                                      "
+network4 from network0: " "
+network4 from network1: " "
+network4 from network2: " "
+network4 from network3: " "
+network4 from network0: "cs6250"
+network4 from network1: "cs6250"
+network4 from network2: "cs6250"
+network4 from network3: "cs6250"
+network4 from network0: "fsadfsdfd"
+network4 from network1: "fsadfsdfd"
+network4 from network2: "fsadfsdfd"
+network4 from network3: "fsadfsdfd"
+network4 from network0: "empty message"
+network4 from network1: "empty message"
+network4 from network2: "empty message"
+network4 from network3: "empty message"
+network4 from network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"
+network4 from network0: "\\0"
+network4 from network1: "\\0"
+network4 from network2: "\\0"
+network4 from network3: "\\0"
+network4 from network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network0: "                                                                                                                                                     "
+network4 from network1: "                                                                                                                                                     "
+network4 from network2: "                                                                                                                                                     "
+network4 from network3: "                                                                                                                                                     "
+network4 from network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+network4 from network0: "                                                                                                                                                      "
+network4 from network1: "                                                                                                                                                      "
+network4 from network2: "                                                                                                                                                      "
+network4 from network3: "                                                                                                                                                      "
+
+user network0 stdin command: timeline
+No new message
+
+user network1 stdin command: timeline
+No new message
+
+user network2 stdin command: timeline
+No new message
+
+user network3 stdin command: timeline
+No new message
+
+user network4 stdin command: timeline
+No new message
+
+user network0 stdin command: exit
+Bye bye
+
+user network1 stdin command: exit
+Bye bye
+
+user network2 stdin command: exit
+Bye bye
+
+user network3 stdin command: exit
+Bye bye
+
+user network4 stdin command: exit
+Bye bye
+test_multi_client _ end
+
+
+run command: python3 -u ttweetcli.py 127.0.0.1 13000 gtnetwork
+username legal, connection established
+
+run command on same user: python3 -u ttweetcli.py 127.0.0.1 13000 gtnetwork
+this step should be failed
+user already login, shutdown client
+
+user gtnetwork stdin command: exit
+Bye bye
+
+run command on same user: python3 -u ttweetcli.py 127.0.0.1 13000 gtnetwork
+this step should succeed
+username legal, connection established
+
+user gtnetwork stdin command: exit
+Bye bye

@@ -68,8 +68,7 @@ def main(argv):
             data = s.recv(1024)
         except socket.error:
             print("socket error")
-            sys.exit(1)
-        # username check
+            return        # username check
         data = repr(data)
         if (data == "b'Username has already been taken'"):
             print("user already login, shutdown client")
