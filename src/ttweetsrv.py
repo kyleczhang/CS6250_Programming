@@ -12,12 +12,17 @@ def run_server(conn,address,user):
             data = repr(data)
             if (data == "b''"):
                 raise ConnectionError('Client command error')
+            print(data)
             command = data.split()[0]
+            print(command)
             # client send tweet to server
             if ("tweet" in command):
                 # Get the tweet in the quotations
-                tweet = data.split("\"")[1]
-                tweet = user + ": \"" + tweet + "\"" 
+                tweet = data.split('"')[1]
+                tweet = tweet.replace('\\\\', '\\')
+                print(tweet)
+                tweet = user + ': "' + tweet + '"' 
+                print(tweet)
                 for target in users:
                     if target == user:
                         continue

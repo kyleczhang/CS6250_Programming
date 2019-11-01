@@ -1,17 +1,481 @@
 Server is now listening to 127.0.0.1 : 13000
 Connected by network
+b'tweet "message"'
+b'tweet
+message
+network: "message"
+b'tweet "message message"'
+b'tweet
+message message
+network: "message message"
+b'exit'
+b'exit'
 Connection with network has been closed
 Connected by network0
 Connected by network1
 Connected by network2
 Connected by network3
 Connected by network4
+b'tweet "message"'
+b'tweet
+message
+network0: "message"
+b'tweet "message"'
+b'tweet
+message
+network1: "message"
+b'tweet "message"'
+b'tweet
+message
+network2: "message"
+b'tweet "message"'
+b'tweet
+message
+network3: "message"
+b'tweet "message"'
+b'tweet
+message
+network4: "message"
+b'tweet "message message"'
+b'tweet
+message message
+network0: "message message"
+b'tweet "message message"'
+b'tweet
+message message
+network1: "message message"
+b'tweet "message message"'
+b'tweet
+message message
+network2: "message message"
+b'tweet "message message"'
+b'tweet
+message message
+network3: "message message"
+b'tweet "message message"'
+b'tweet
+message message
+network4: "message message"
+b'tweet " "'
+b'tweet
+ 
+network0: " "
+b'tweet " "'
+b'tweet
+ 
+network1: " "
+b'tweet " "'
+b'tweet
+ 
+network2: " "
+b'tweet " "'
+b'tweet
+ 
+network3: " "
+b'tweet " "'
+b'tweet
+ 
+network4: " "
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network0: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network1: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network2: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network3: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network4: "cs6250"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network0: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network1: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network2: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network3: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network4: "fsadfsdfd"
+b'tweet "empty message"'
+b'tweet
+empty message
+network0: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network1: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network2: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network3: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network4: "empty message"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "\\0"'
+b'tweet
+\0
+network0: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network1: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network2: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network3: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network4: "\0"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network0: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network1: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network2: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network3: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network4: "                                                                                                                                                     "
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network0: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network1: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network2: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network3: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network4: "                                                                                                                                                      "
+b'tweet " "'
+b'tweet
+ 
+network0: " "
+b'tweet " "'
+b'tweet
+ 
+network1: " "
+b'tweet " "'
+b'tweet
+ 
+network2: " "
+b'tweet " "'
+b'tweet
+ 
+network3: " "
+b'tweet " "'
+b'tweet
+ 
+network4: " "
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network0: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network1: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network2: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network3: "cs6250"
+b'tweet "cs6250"'
+b'tweet
+cs6250
+network4: "cs6250"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network0: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network1: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network2: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network3: "fsadfsdfd"
+b'tweet "fsadfsdfd"'
+b'tweet
+fsadfsdfd
+network4: "fsadfsdfd"
+b'tweet "empty message"'
+b'tweet
+empty message
+network0: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network1: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network2: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network3: "empty message"
+b'tweet "empty message"'
+b'tweet
+empty message
+network4: "empty message"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network0: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network1: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network2: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network3: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "~!@#$%^&*()_+-=[]{};:.,<>/?|\\"'
+b'tweet
+~!@#$%^&*()_+-=[]{};:.,<>/?|\
+network4: "~!@#$%^&*()_+-=[]{};:.,<>/?|\"
+b'tweet "\\0"'
+b'tweet
+\0
+network0: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network1: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network2: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network3: "\0"
+b'tweet "\\0"'
+b'tweet
+\0
+network4: "\0"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network0: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network1: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network2: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network3: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network4: "149aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network0: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network1: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network2: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network3: "                                                                                                                                                     "
+b'tweet "                                                                                                                                                     "'
+b'tweet
+                                                                                                                                                     
+network4: "                                                                                                                                                     "
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network0: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network1: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network2: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network3: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+b'tweet
+150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+network4: "150aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network0: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network1: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network2: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network3: "                                                                                                                                                      "
+b'tweet "                                                                                                                                                      "'
+b'tweet
+                                                                                                                                                      
+network4: "                                                                                                                                                      "
+b'exit'
+b'exit'
 Connection with network0 has been closed
+b'exit'
+b'exit'
 Connection with network1 has been closed
+b'exit'
+b'exit'
 Connection with network2 has been closed
+b'exit'
+b'exit'
 Connection with network3 has been closed
+b'exit'
+b'exit'
 Connection with network4 has been closed
 Connected by gtnetwork
+b'exit'
+b'exit'
 Connection with gtnetwork has been closed
 Connected by gtnetwork
+b'exit'
+b'exit'
 Connection with gtnetwork has been closed
